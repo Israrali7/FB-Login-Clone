@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+</head>
+<style>
+.main{
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+    background-color: rgb(252,252,253);
+}
+.container{
+    border-radius: 7px;
+    border: 1px solid rgb(159, 155, 155);
+    background-color: #ffffff;
+    padding: 15px;
+}
+.para{
+color: rgb(147,180,186);
+line-height: 0%;
+}
+.in{
+    background-color: #f5f6f7;
+    width: 350px;
+    border: 1px solid #d0e3fe;
+    padding: 8px;
+    margin: 5px;
+}
+.out{
+    width: 164px;
+    background-color: #f5f6f7;
+    margin: 5px;
+    border: 1px solid #d0e3fe;
+    padding: 6px;
+}
+.para1{
+    font-size: smaller;
+}
+.label{
+    border: 1px solid rgb(138, 134, 134);
+    margin-left: 10px;
+    padding: 4px;
+    border-radius: 3px;
+}
+#btn2{
+    color: #fffefe;
+    background-color: rgb(40, 148, 40);
+    width: 100px;
+    margin-left: 9rem;
+    padding: 5px;
+    border: 0px;
+}
+</style>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Sign Up</h1>
+            <p class="para" >It`s quick and easy.</p>
+            <input class="in" id="userEmail" type="email" placeholder="Email address or phone number"><br>
+            <input class="in" id="userPassword" type="password" placeholder="Password"><br>
+            <input class="out" type="text" placeholder="First name">
+            <input class="out" type="text" placeholder="Surname">
+    <p>Gender ?</p>
+    <div style="display: flex;">
+        <div class="label"><label for="Male">Male</label><input type="radio" name="Gen" id="Male"></div>
+        <div class="label"><label for="Female">Female</label><input type="radio" name="Gen" id="Female"></div>
+        <div class="label"><label for="Custom">Custom</label><input type="radio" name="Gen" id="Custom"></div>
+    </div>
+        <p class="para1">People who use our service may have uploaded your contact information to <br>
+        Facebook. Learn more.<br>
+        By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. <br>
+        You may receive SMS notifications from us and can opt out at any time.</p>
+        <a href="login.html"><button id="btn2" >Sign Up</button></a>
+        </div>
+    </div>
+</body>
+<script>
+
+var signUp = document.getElementById('btn2')
+signUp.addEventListener('click', function(){
+var email = document.getElementById('userEmail')
+var password = document.getElementById('userPassword')
+
+console.log( email.value, password.value);
+localStorage.setItem('Email',email.value)
+localStorage.setItem('Password',password.value)
+alert('Welcome to Facebook')
+    // window.location.href ="login.html"
+})
+
+</script>
+</html>

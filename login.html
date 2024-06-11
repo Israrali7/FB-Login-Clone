@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Account</title>
+</head>
+
+<style>
+div.main{
+    display: flex;
+    margin: 12% 10% 20% 15%;
+}
+div.content{
+    margin-right: 10rem;
+}
+div.login{
+    background: #ffffff;
+    margin-left: 9rem;
+    border-radius: 8px;
+    padding: 1rem;
+    height: 270px;
+}
+.para{
+    font-size: large;
+}
+.in{
+    margin: 8px;
+    padding: 1rem;
+    text-decoration: none;
+    border: 1px solid rgb(221, 221, 249);
+    width: 250px;
+    border-radius: 5px;
+}
+.btns{
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+    margin-left: 1.1rem;
+    padding: 0.6rem;
+    width: 270px;
+    border-radius: 5px;
+}
+#btn{
+    color: white;
+    background-color: blue;
+}
+#btn1{
+    color: blue;
+}
+#btn2{
+    color: #fffefe;
+    background-color: rgb(40, 148, 40);
+    width: 150px;
+    margin-left: 4.2rem;
+}
+</style>
+<body style = " background : rgb(241,243,244)">
+<div class="main">
+    <div class="content">
+        <h1 style="color: blue; font-size: 3rem;" >facebook</h1>
+        <p class="para">faceboook help you to connect and share <br>
+        with people in your life</p>
+    </div>
+    <div class="login">
+        <input class="in" id="getEmail" type="text" placeholder="Email address or phone number"><br>
+        <input class="in" id="getPassword" type="password" placeholder="Password"><br>
+        <button class="btns" id="btn">Log In</button><br>
+        <button class="btns" id="btn1">Forget Password</button><br>
+        <button class="btns" id="btn2">Create Account</button><br>
+    </div>
+<script>
+    var create= document.getElementById('btn2')
+create.addEventListener('click',function(){
+    window.location.href ='create.html'
+})
+
+var login = document.getElementById('btn')
+login.addEventListener('click',function(){
+    var email = document.getElementById('getEmail').value 
+    var password = document.getElementById('getPassword').value
+    // console.log("UserEmail " ,email);
+    // console.log("UserPassword " ,password);
+    var saveEmail = localStorage.getItem('Email')
+    var savePassword =localStorage.getItem('Password')
+
+    if(saveEmail == email && savePassword == password){
+        alert("Welcome to the Facebook")
+    window.location.href ="home.html"
+    }
+    else if (saveEmail != email && savePassword != password){
+        alert('we can`t reach to your account')
+    }
+    else if (saveEmail != email){
+        alert('Your email is inCorrect')
+    }else if (savePassword != password){
+        alert('Your Password is inCorrect')
+    }else{
+        alert('Something went wrong')
+    }
+})
+
+
+</script>
+</div>
+</body>
+</html>
