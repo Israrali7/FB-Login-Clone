@@ -87,6 +87,7 @@ login.addEventListener('click',function(){
     if(saveEmail == email && savePassword == password){
         alert("Welcome to the Facebook")
     window.location.href ="index1.html"
+    localStorage.setItem("isloggedin", true)
     }
     else if (saveEmail != email && savePassword != password){
         alert('we can`t reach to your account')
