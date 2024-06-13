@@ -59,9 +59,9 @@ line-height: 0%;
         <div class="container">
             <h1>Sign Up</h1>
             <p class="para" >It`s quick and easy.</p>
-            <input class="in" id="userEmail" type="email" placeholder="Email address or phone number"><br>
-            <input class="in" id="userPassword" type="password" placeholder="Password"><br>
-            <input class="out" type="text" placeholder="First name">
+            <input class="in"  id="userEmail" type="email" placeholder="Email address or phone number" required><br>
+            <input class="in" id="userPassword" type="password" placeholder="Password" required><br>
+            <input class="out" type="text" placeholder="First name" id="userName" required>
             <input class="out" type="text" placeholder="Surname">
     <p>Gender ?</p>
     <div style="display: flex;">
@@ -82,9 +82,12 @@ line-height: 0%;
 var signUp = document.getElementById('btn2')
 signUp.addEventListener('click', function(){
 var email = document.getElementById('userEmail')
+var name = document.getElementById('userName')
 var password = document.getElementById('userPassword')
-
-console.log( email.value, password.value);
+// var keyName = `userName(${userName.value})`
+// var keyPassword = `userPassword(${userPassword.value})`
+// console.log( 'password', password.value);
+localStorage.setItem('Name',name.value)
 localStorage.setItem('Email',email.value)
 localStorage.setItem('Password',password.value)
 alert('Welcome to Facebook')
